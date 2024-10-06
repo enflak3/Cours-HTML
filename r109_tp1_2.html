@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8"/>
+		<title>R109 : TP1
+		</title>
+		<style>
+		
+		h1{
+		color:rgb(221,221,221);
+		background-color:rgb(68,68,102);
+		text-align:center
+		}
+		
+		h2{
+		color:rgb(68,68,102);
+		background-color:rgb(204,204,255);
+		text-align:left;
+		}
+		
+		h3{
+		color:rgb(68,68,102);
+		text-decoration:underline;
+		}
+		
+		html{
+		background-color:rgb(240,240,255);
+		}
+		
+		h1,h2,h3{
+		font-family:Free Sans;
+		font-style:bold;
+		}
+		
+		p,ol,ul{
+		color:darkblue;
+		}
+		
+		em{
+		font-style:italic;
+		color:darkorange;
+		}
+		
+		mark{
+		background-color:pink;
+		}
+		
+		code{
+		color:olive;
+		font-family:Liberation Mono;
+		}
+		
+		pre{
+		color:white;
+		background-color:black;
+		}
+		
+		.centered{
+		text-align:center;
+		}
+		
+		.caption{
+		text-align:center
+		color:black
+		}
+		
+		.toc1{
+		list-style-type:upper-roman;
+		}
+		
+		.toc2{
+		list-style-type:upper-latin;
+		}
+		
+		.sommaire{
+		font-variant:small-caps;
+		}
+		
+		img{
+		width:75%;
+		}
+		
+		alt{
+		text-align:center;
+		color:black;
+		}
+		
+		</style>
+	</head>
+	<body>
+			<h1>R109 : S&eacute;ance de TP 1
+			</h1>
+	<hr/>
+			<h2 class="sommaire">Sommaire
+			</h2>
+			<ol>
+				<li class="toc1"><a href="#html_vs_xhtml">HTML vs XTML</a>
+				</li>
+				<li class="toc1"><a href="#codage_utf_8">Codage UTF-8</a>
+					<ol class="toc2">
+						<li><a href="#JUC">Jeu universel de caracyère codés</a>
+						</li>
+						<li><a href="#unicode">Unicode</a>
+						</li>
+						<li><a href="#utf_8">UTF-8</a>
+						</li>
+					</ol>
+				</li>
+				<li class="toc1"><a href="#autres_codages">Autres codages</a>
+					<ol class="toc2">
+						<li><a href="#ISO">ISO-8859-1</a>
+						</li>
+						<li><a href="#windows">Windows 1252</a>
+						</li>
+					</ol>
+				</li>
+			</ol>
+	<hr/>
+			<h2 id="html_vs_xhtml">HTML vs XHTML
+			</h2>
+				<ul>
+					<li>en <abbr title="eXtensible HyperText Markup Language">XHTML</abbr> les <em>noms des balises</em> et les <em>noms des attributs</em> doivent obligatoirement &ecirc;tres &eacute;crits en <em>minuscules</em>
+					</li>
+					<li>les valeurs des attributs doivent obligatoirement &ecirc;tre &eacute;crits entre guillemets
+					</li>
+					<li>toute balise ouverte doit &ecirc;tre ferm&eacute;e, en particulier, les balises vides du <abbr title="HyperText Markup Language">HTML</abbr> deviennent des balises autofermantes par ajout d'une barre oblique avant le chevron fermant de la balise, par exemple <code>&lt;br&gt;</code> devient <code>&lt;br/&gt;</code>
+					</li>
+					<li>tous les &eacute;l&eacute;ments doivent &ecirc;tre explicitement balis&eacute;s, en particulier, l'en-t&ecirc; et le corps d'un document doivent &ecirc;tre explicitement balis&eacute;s par <code>&lt;head&gt;</code>&hellip;<code>&lt;/head&gt;</code> et <code>&lt;body&gt;</code>&hellip;<code>&lt;/body&gt;</code>
+					</li>
+					<li>tous les attributs doivent avoir une valeur explicite (pas d'attributs condens&eacute;s)
+					</li>
+				</ul>
+				<p> <abbr title="HyperText Markup Language">HTML</abbr> est langage de balises issu du langage <abbr title="Standard Generalized Markup Language">SGML</abbr>. <abbr title="eXtensible HyperText Markup Language">XHTML</abbr> est une refonte de <abbr title="HyperText Markup Language">HTML</abbr> &agrave; partir du langage <abbr title="eXtensible Markup Language">XML</abbr>, plus strict que <abbr title="Standard Generalized Markup Language">SGML</abbr>. Comme <abbr title="eXtensible HyperText Markup Language">XHTML</abbr> et <abbr title="HyperText Markup Language">HTML</abbr> n'ont pas les m&ecirc;mes langages parents, des diff&eacute;rences existent :	
+				</p>
+			<h2 id="codage_utf_8">Codage UTF-8
+			</h2>
+			<h3 id="JUC">Jeu universel de caract&egrave;res cod&eacute;s
+			</h3>
+				<p>La norme <a href="https://fr.wikipedia.org/wiki/ISO/CEI_10646">ISO/CEI-10646</a> d&eacute;finit une table de caract&egrave;res appel&eacute;e &laquo;&nbsp; jeu universel de caract&egrave;res cod&eacute;s &nbsp;&raquo; (JUC), ou &laquo;&nbsp; universal character set &nbsp;&raquo; (UCS) en anglais. Cette table contient environ 110000 caract&egrave;res issus du monde entier. Chaque caract&egrave;re du JUC est identifi&eacute; par un point de code not&eacute; U+x, où x est un entier hexad&eacute;cimal positif comportant de 4 &agrave; 6 chiffres :
+				</p>
+				<ul>
+					<li>4 chiffres pour le plan multilingue de base (PMB), de U+0000 &agrave; U+FFFF
+					</li>
+					<li>5 chiffres pour les 15 plans suivants, de U+10000 &agrave; U+FFFFF
+					</li>
+					<li>6 chiffres pour le dernier plan , de U+100000 &agrave; U+10FFFF
+					</li>
+				</ul>
+				<p>Chaque caract&egrave;re du <abbr title="Jeu Universel de Caractères Codés">JUC</abbr> poss&egrave;de &eacute;galement un nom, par exemple, la lettre A majuscule de notre alphabet latin s'appelle &laquo;&nbsp; LATIN CAPITAL LETTER A &nbsp;&raquo; et a pour point de code U+0041.
+				</p>
+			<h3 id="unicode">Unicode
+			</h3>
+				<p>Le standard <a href="https://fr.wikipedia.org/wiki/Unicode">Unicode</a> est li&eacute; &agrave; la norme <a href="https://fr.wikipedia.org/wiki/ISO/CEI_10646">ISO/CEI-10646</a> car il reprend le <abbr title="Jeu Universel de Caractères Codés">JUC</abbr> et y ajoute des r&egrave;gles de gestion : collation, codage, s&eacute;rialisation&hellip; <a href="https://fr.wikipedia.org/wiki/Unicode">Unicode</a> accepte plusieurs m&eacute;thodes de codage pour repr&eacute;senter un point de code valide : UTF-8, UTF-16 et UTF-32. Le nombre derri&egrave;re le sigle UTF est le nombre de bits minimal d'une unit&eacute; de code, appel&eacute;e &laquo;&nbsp; codet &nbsp;&raquo;.
+				</p>
+			<h3 id="utf_8">UTF-8
+			</h3>
+				<p>Le codage le plus utilis&eacute; est <a href="https://fr.wikipedia.org/wiki/UTF-8">UTF-8</a>, qui est un codage de longueur variable dont les codets sont des unit&eacute;s de 8 bits.
+En <a href="https://fr.wikipedia.org/wiki/UTF-8">UTF-8</a> un point de code U+n se code sur un, deux, trois ou quatre octets en fonction du nombre de bits n&eacute;cessaires pour coder n.
+Si n appartient au code <a href="https://fr.wikipedia.org/wiki/American_Standard_Code_for_Information_Interchange#:~:text=20127%20(Microsoft%207%2Dbit%20US%2DASCII)&text=ASCII%20est%20la%20norme%20de,fran%C3%A7ais%20et%20ses%20lettres%20accentu%C3%A9es.">ASCII</a> (7 bits), alors n est compris entre 00 et 7F et se code sur un seul octet avec 0 comme bit de poids fort. <a href="https://fr.wikipedia.org/wiki/UTF-8">UTF-8</a> est donc enti&egrave;rement compatible avec le code <a href="https://fr.wikipedia.org/wiki/American_Standard_Code_for_Information_Interchange#:~:text=20127%20(Microsoft%207%2Dbit%20US%2DASCII)&text=ASCII%20est%20la%20norme%20de,fran%C3%A7ais%20et%20ses%20lettres%20accentu%C3%A9es.">ASCII</a>.
+Dans les autres cas, les bits de poids fort du premier octet commencent par une suite de 1 suivie d'un 0. <mark>Le nombre de l indique le nombre total d'octets dans le codage de U+n</mark>. Les deux bits de poids fort de tous les octets qui suivent portent toujours la marque 10. Un point de code cod&eacute; en <a href="https://fr.wikipedia.org/wiki/UTF-8">UTF-8</a> aura donc l'une des quatre formes suivantes :
+				</p>
+				<ol>
+					<li><code>0xxxxxxx</code> : jusqu'&agrave; 7 bits
+					</li>
+					<li><code>110xxxxx 10xxxxxx</code> : entre 8 et 11 bits
+					</li>
+					<li><code>1110xxxx 10xxxxxx 10xxxxxx</code> : entre 12 et 16 bits
+					</li>
+					<li><code>11110xxx 10xxxxxx 10xxxxxx 10xxxxxx</code> : entre 17 et 21 bits
+					</li>
+				</ol>
+				<p>Quand plusieurs formes sont possibles, <em>seule la plus courte est consid&eacute;r&eacute;e</em>
+comme valide.
+				</p>
+				<p>Les bits x correspondent simplement au codage de n en binaire cadr&eacute; &agrave; droite et
+&eacute;ventuellement compl&eacute;t&eacute; par des 0 &agrave; gauche.
+				</p>
+			<h2 id="autres_codages">Autres codages
+			</h2>
+			<h3 id="ISO">ISO-8859-1
+			</h3>
+				<p class="centered"><img src="https://homepages.loria.fr/DMery/cours/r109/img/%c3%A7a%20c%27est%20l%27image%20pour%20iso-8859-1.png" alt="Table des codes ISO-8859-1"/>
+				</p>
+				<p>
+					<cite class="caption">page de codes cp859</cite>
+				</p>
+			<h3 id="windows">Windows-1252
+			</h3>
+				<p class="centered"><img src="https://homepages.loria.fr/DMery/cours/r109/img/codage.windows%22%3Ecp1252.png" alt="Table des codes Windows 1252"/>
+				</p>
+				<p>
+					<cite class="caption">page de codes cp1252</cite>
+				</p>
+	<hr/>
+		<pre>
+       .--.  .-'''-.  .--.
+      /."".v'.-. .-.`v.""\\
+      ||  / / O| | O\ \  ||
+      \\_/| \__| |__/  \_//
+       `-'\  .-n-n-.  /`-'
+        _.-\/       \/-._
+      .'   (\`.___.'/)   `.
+     /      \`.___.'/      `.
+    /        `.___.'         \
+    |     |             \     \
+    |     |   .      .  |\     \
+    |     |             | \     \
+     \     \            |  \     \
+      \     \           |.' `.    \
+       `.    \         .'     `.   \
+  _.._   `.   `-. ___ /        /`.  `.
+.'    `-._ `.    `.__)       .'  /    `.
+|         `-.\     \/      .'   / /\  )|\.
+ \          _/ / /|/     .'    (_/ / / | \)
+  `._      (__/_/-/   ..'         (_/| |\_)
+     ``--._____.-(     `.            `-'
+                  `--.   `.
+                    (_/\ \\\
+                       /_///
+		</pre>
+	</body>
+</html>
